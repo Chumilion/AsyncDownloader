@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity
 
 
         DownloadTask downloadTask = new DownloadTask(this);
-        downloadTask.execute("http://shakespeare.mit.edu/hamlet/full.html");
+        downloadTask.execute("http://www.opensourceshakespeare.org/views/plays/play_view.php?WorkID=hamlet&Scope=entire&pleasewait=1&msg=pl");
     }
 
     @Override
@@ -142,8 +142,8 @@ public class MainActivity extends AppCompatActivity
                     build.append("\n");
 
                     total += addLine.length();
-                    Log.i("total")
-                    updateProgress((int) (total * 100 / fileLength));
+                    Log.i("total", total + " " + fileLength);
+                    updateProgress((int) (total * 100.0 / fileLength));
                 }
 
                 return build.toString();
